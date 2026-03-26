@@ -1,0 +1,282 @@
+{
+  "generated_at": "2026-03-26T04:00:20.862780",
+  "article_count": 10,
+  "articles": [
+    {
+      "provider": "spaceflight",
+      "provider_article_id": "1158",
+      "title": "Swarm, after FCC blunder, hires satellite regulatory veteran Kalpak Gude",
+      "url": "https://spacenews.com/swarm-after-fcc-blunder-hires-satellite-regulatory-veteran-kalpak-gude/",
+      "source_name": "SpaceNews",
+      "published_at": "2019-01-07T23:00:00Z",
+      "authors": [],
+      "raw": {
+        "id": 1158,
+        "title": "Swarm, after FCC blunder, hires satellite regulatory veteran Kalpak Gude",
+        "authors": [],
+        "url": "https://spacenews.com/swarm-after-fcc-blunder-hires-satellite-regulatory-veteran-kalpak-gude/",
+        "image_url": "https://spacenews.com/wp-content/uploads/2019/01/31961357_2123889021191016_6550843652124442624_n-300x200.jpg",
+        "news_site": "SpaceNews",
+        "summary": "",
+        "published_at": "2019-01-07T23:00:00Z",
+        "updated_at": "2021-05-18T13:44:01.685000Z",
+        "featured": false,
+        "launches": [],
+        "events": []
+      }
+    },
+    {
+      "provider": "spaceflight",
+      "provider_article_id": "15904",
+      "title": "NASA: no notification by Russia to end ISS participation",
+      "url": "https://spacenews.com/nasa-no-notification-by-russia-to-end-iss-participation/",
+      "source_name": "SpaceNews",
+      "published_at": "2022-07-26T16:50:20Z",
+      "authors": [],
+      "raw": {
+        "id": 15904,
+        "title": "NASA: no notification by Russia to end ISS participation",
+        "authors": [],
+        "url": "https://spacenews.com/nasa-no-notification-by-russia-to-end-iss-participation/",
+        "image_url": "https://spacenews.com/wp-content/uploads/2021/11/iss-nov2021.jpg",
+        "news_site": "SpaceNews",
+        "summary": "NASA officials said July 26 they have received no official notification from Roscosmos of plans to end cooperation on the International Space Station despite comments from that agency’s new leader.",
+        "published_at": "2022-07-26T16:50:20Z",
+        "updated_at": "2022-07-26T16:50:20.904000Z",
+        "featured": false,
+        "launches": [],
+        "events": []
+      }
+    },
+    {
+      "provider": "spaceflight",
+      "provider_article_id": "5553",
+      "title": "SpaceX, ULA aim for back-to-back Starlink, spaceplane rocket launches",
+      "url": "https://www.teslarati.com/spacex-ula-back-to-back-starlink-spaceplane-launches/",
+      "source_name": "Teslarati",
+      "published_at": "2020-05-12T19:11:26Z",
+      "authors": [],
+      "raw": {
+        "id": 5553,
+        "title": "SpaceX, ULA aim for back-to-back Starlink, spaceplane rocket launches",
+        "authors": [],
+        "url": "https://www.teslarati.com/spacex-ula-back-to-back-starlink-spaceplane-launches/",
+        "image_url": "https://www.teslarati.com/wp-content/uploads/2020/05/Starlink-V1-L2-B1049-X-37B-USSF-7-Richard-Angle-Boeing-1-c-1024x511.jpg",
+        "news_site": "Teslarati",
+        "summary": "",
+        "published_at": "2020-05-12T19:11:26Z",
+        "updated_at": "2021-05-18T13:46:46.385000Z",
+        "featured": false,
+        "launches": [
+          {
+            "launch_id": "51dcfdc7-6dc8-42e3-8480-b41f24d874e3",
+            "provider": "Launch Library 2"
+          }
+        ],
+        "events": []
+      }
+    },
+    {
+      "provider": "spaceflight",
+      "provider_article_id": "14799",
+      "title": "Space startups argue for more agile business models",
+      "url": "https://spacenews.com/space-startups-argue-for-more-agile-business-models/",
+      "source_name": "SpaceNews",
+      "published_at": "2022-04-23T19:44:19Z",
+      "authors": [],
+      "raw": {
+        "id": 14799,
+        "title": "Space startups argue for more agile business models",
+        "authors": [],
+        "url": "https://spacenews.com/space-startups-argue-for-more-agile-business-models/",
+        "image_url": "https://spacenews.com/wp-content/uploads/2022/04/Screen-Shot-2022-04-22-at-9.42.27-AM.png",
+        "news_site": "SpaceNews",
+        "summary": "Companies pursuing emerging technologies are getting funding from venture investors but also are looking for U.S. government support",
+        "published_at": "2022-04-23T19:44:19Z",
+        "updated_at": "2022-04-23T19:44:19.540000Z",
+        "featured": false,
+        "launches": [],
+        "events": []
+      }
+    },
+    {
+      "provider": "spaceflight",
+      "provider_article_id": "35310",
+      "title": "NASA Stennis Engineer Proud to Serve During NASA’s Return to the Moon",
+      "url": "https://www.nasa.gov/image-article/richard-wear-proud-to-serve-during-return-to-the-moon/",
+      "source_name": "NASA",
+      "published_at": "2026-01-12T17:42:32Z",
+      "authors": [
+        "NASA"
+      ],
+      "raw": {
+        "id": 35310,
+        "title": "NASA Stennis Engineer Proud to Serve During NASA’s Return to the Moon",
+        "authors": [
+          {
+            "name": "NASA",
+            "socials": null
+          }
+        ],
+        "url": "https://www.nasa.gov/image-article/richard-wear-proud-to-serve-during-return-to-the-moon/",
+        "image_url": "https://www.nasa.gov/wp-content/uploads/2026/01/s26-001-richard-wear.jpg",
+        "news_site": "NASA",
+        "summary": "Richard Wear calls it an honor to be working at NASA’s Stennis Space Center near Bay St. Louis, Mississippi, during a historic time as NASA prepares to send astronauts around the Moon for the first time in more than 50 years on the Artemis II mission. “I have not stopped learning in the 15 years […]",
+        "published_at": "2026-01-12T17:42:32Z",
+        "updated_at": "2026-01-12T17:50:11.330567Z",
+        "featured": false,
+        "launches": [],
+        "events": []
+      }
+    },
+    {
+      "provider": "spaceflight",
+      "provider_article_id": "20990",
+      "title": "Record-Setting NASA Astronaut, Crewmates Return from Space Mission",
+      "url": "http://www.nasa.gov/press-release/record-setting-nasa-astronaut-crewmates-return-from-space-mission",
+      "source_name": "NASA",
+      "published_at": "2023-09-27T12:18:00Z",
+      "authors": [],
+      "raw": {
+        "id": 20990,
+        "title": "Record-Setting NASA Astronaut, Crewmates Return from Space Mission",
+        "authors": [],
+        "url": "http://www.nasa.gov/press-release/record-setting-nasa-astronaut-crewmates-return-from-space-mission",
+        "image_url": "https://www.nasa.gov/sites/default/files/thumbnails/image/screenshot_2023-09-27_at_7.53.55_am.png?itok=_axdrdMX",
+        "news_site": "NASA",
+        "summary": "During his record-breaking mission, Rubio spent many hours on scientific activities aboard the space station, conducting a variety of tasks ranging from plant research to physical sciences studies.",
+        "published_at": "2023-09-27T12:18:00Z",
+        "updated_at": "2023-09-27T16:12:09.575000Z",
+        "featured": false,
+        "launches": [
+          {
+            "launch_id": "bc73ec4f-633e-4eb5-8b8e-5c996ea1733f",
+            "provider": "Launch Library 2"
+          },
+          {
+            "launch_id": "e3290e0e-d967-4a5d-95eb-f8fae06a9034",
+            "provider": "Launch Library 2"
+          }
+        ],
+        "events": []
+      }
+    },
+    {
+      "provider": "spaceflight",
+      "provider_article_id": "26541",
+      "title": "Ocean experts raise concerns over deorbiting the International Space Station",
+      "url": "https://spacenews.com/ocean-experts-raise-concerns-over-deorbiting-the-international-space-station/",
+      "source_name": "SpaceNews",
+      "published_at": "2024-10-09T18:25:26Z",
+      "authors": [],
+      "raw": {
+        "id": 26541,
+        "title": "Ocean experts raise concerns over deorbiting the International Space Station",
+        "authors": [],
+        "url": "https://spacenews.com/ocean-experts-raise-concerns-over-deorbiting-the-international-space-station/",
+        "image_url": "https://i0.wp.com/spacenews.com/wp-content/uploads/2024/10/PHOTO-1-ISS-LARGE-NASA-scaled.jpg",
+        "news_site": "SpaceNews",
+        "summary": "GOLDEN, Colorado — NASA is faced with the challenge of safely deorbiting, in one fell swoop, over 400 tons of space hardware in a few years. As of now, the […]",
+        "published_at": "2024-10-09T18:25:26Z",
+        "updated_at": "2024-10-09T18:27:16.468897Z",
+        "featured": false,
+        "launches": [],
+        "events": []
+      }
+    },
+    {
+      "provider": "spaceflight",
+      "provider_article_id": "2183",
+      "title": "Watch live: Spacewalkers begin battery replacement work outside space station",
+      "url": "https://spaceflightnow.com/2019/03/22/watch-live-spacewalkers-begin-battery-replacement-work-outside-space-station/",
+      "source_name": "Spaceflight Now",
+      "published_at": "2019-03-22T13:10:02Z",
+      "authors": [],
+      "raw": {
+        "id": 2183,
+        "title": "Watch live: Spacewalkers begin battery replacement work outside space station",
+        "authors": [],
+        "url": "https://spaceflightnow.com/2019/03/22/watch-live-spacewalkers-begin-battery-replacement-work-outside-space-station/",
+        "image_url": "https://mk0spaceflightnoa02a.kinstacdn.com/wp-content/uploads/2019/03/eva52_2-326x245.jpg",
+        "news_site": "Spaceflight Now",
+        "summary": "",
+        "published_at": "2019-03-22T13:10:02Z",
+        "updated_at": "2021-05-18T13:44:38.750000Z",
+        "featured": false,
+        "launches": [],
+        "events": []
+      }
+    },
+    {
+      "provider": "spaceflight",
+      "provider_article_id": "2580",
+      "title": "Electrical issues resolved to allow CRS-17 Dragon launch",
+      "url": "https://www.nasaspaceflight.com/2019/04/electrical-issue-station-dragon-crs-17/",
+      "source_name": "NASASpaceflight",
+      "published_at": "2019-05-02T14:23:05Z",
+      "authors": [],
+      "raw": {
+        "id": 2580,
+        "title": "Electrical issues resolved to allow CRS-17 Dragon launch",
+        "authors": [],
+        "url": "https://www.nasaspaceflight.com/2019/04/electrical-issue-station-dragon-crs-17/",
+        "image_url": "https://www.nasaspaceflight.com/wp-content/uploads/2019/04/NSF-2019-04-30-14-36-11-219.jpg",
+        "news_site": "NASASpaceflight",
+        "summary": "",
+        "published_at": "2019-05-02T14:23:05Z",
+        "updated_at": "2022-08-29T13:52:08.002000Z",
+        "featured": false,
+        "launches": [],
+        "events": []
+      }
+    },
+    {
+      "provider": "spaceflight",
+      "provider_article_id": "23231",
+      "title": "Relativity Space wins $8.7 million U.S. Air Force contract for additive manufacturing research",
+      "url": "https://spacenews.com/relativity-space-wins-8-7-million-u-s-air-force-contract-for-additive-manufacturing-research/",
+      "source_name": "SpaceNews",
+      "published_at": "2024-04-14T11:02:16Z",
+      "authors": [],
+      "raw": {
+        "id": 23231,
+        "title": "Relativity Space wins $8.7 million U.S. Air Force contract for additive manufacturing research",
+        "authors": [],
+        "url": "https://spacenews.com/relativity-space-wins-8-7-million-u-s-air-force-contract-for-additive-manufacturing-research/",
+        "image_url": "https://i0.wp.com/spacenews.com/wp-content/uploads/2024/04/StargateikF4bsAAA_l_-scaled.jpeg",
+        "news_site": "SpaceNews",
+        "summary": "AFRL said \"this effort with Relativity Space is in response to a congressional demand signal.\"",
+        "published_at": "2024-04-14T11:02:16Z",
+        "updated_at": "2024-04-14T11:03:07.249531Z",
+        "featured": false,
+        "launches": [],
+        "events": []
+      }
+    }
+  ],
+  "analysis": {
+    "least_common_words_containing_l": [
+      {
+        "word": "afrl",
+        "count": 1
+      },
+      {
+        "word": "agile",
+        "count": 1
+      },
+      {
+        "word": "allow",
+        "count": 1
+      },
+      {
+        "word": "also",
+        "count": 1
+      },
+      {
+        "word": "blunder",
+        "count": 1
+      }
+    ],
+    "authors_appearing_more_than_once": []
+  }
+}

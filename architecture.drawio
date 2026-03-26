@@ -1,0 +1,311 @@
+<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36" version="29.6.6">
+  <diagram name="News Pipeline Architecture" id="arch">
+    <mxGraphModel dx="3827" dy="817" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="1100" pageHeight="1900" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="s1_header" parent="1" style="text;html=1;strokeColor=none;fillColor=#dae8fc;align=left;verticalAlign=middle;spacingLeft=10;fontSize=13;fontStyle=1;rounded=1;" value="① CONFIGURATION  (config.py · providers/config.py)" vertex="1">
+          <mxGeometry height="28" width="860" x="15" as="geometry" />
+        </mxCell>
+        <mxCell id="fetchconfig" parent="1" style="html=1;rounded=1;whiteSpace=wrap;fillColor=#fff2cc;strokeColor=#d6b656;align=left;spacingLeft=8;fontSize=11;verticalAlign=top;spacingTop=6;" value="&lt;b&gt;FetchConfig&lt;/b&gt;  providers/config.py&lt;br&gt; Global defaults (used unless provider override is non-None):&lt;br&gt; rate_limit_seconds=1.0 · page_size=10 · timeout_seconds=10.0 · max_retry_attempts=3 · backoff_seconds=2.0&lt;br&gt; gnews_* / spaceflight_* nullable fields override global per-provider&lt;br&gt; &lt;i&gt;fetch_config.get(field, provider) resolves effective value&lt;/i&gt;" vertex="1">
+          <mxGeometry height="90" width="460" x="20" y="50" as="geometry" />
+        </mxCell>
+        <mxCell id="settings" parent="1" style="html=1;rounded=1;whiteSpace=wrap;fillColor=#fff2cc;strokeColor=#d6b656;align=left;spacingLeft=8;fontSize=11;verticalAlign=top;spacingTop=6;" value="&lt;b&gt;Settings&lt;/b&gt;  config.py&lt;br&gt; gnews_api_key ← GNEWS_API_KEY (env / .env)&lt;br&gt; Built-in .env parser — no external deps&lt;br&gt; Frozen dataclass — immutable at runtime" vertex="1">
+          <mxGeometry height="90" width="360" x="515" y="50" as="geometry" />
+        </mxCell>
+        <mxCell id="s2_header" parent="1" style="text;html=1;strokeColor=none;fillColor=#e1d5e7;align=left;verticalAlign=middle;spacingLeft=10;fontSize=13;fontStyle=1;rounded=1;" value="② DATA CONTRACTS / MODELS  (models.py)" vertex="1">
+          <mxGeometry height="28" width="860" x="20" y="175" as="geometry" />
+        </mxCell>
+        <mxCell id="newsquery" parent="1" style="html=1;rounded=1;whiteSpace=wrap;fillColor=#e1d5e7;strokeColor=#9673a6;align=left;spacingLeft=8;fontSize=11;verticalAlign=top;spacingTop=6;" value="&lt;b&gt;NewsQuery&lt;/b&gt; — input contract&lt;br&gt; q · language · country · category&lt;br&gt; from_date / to_date (datetime | None)&lt;br&gt; page_size  ← from FetchConfig&lt;br&gt; sort_by = publishedAt" vertex="1">
+          <mxGeometry height="100" width="260" x="30" y="213" as="geometry" />
+        </mxCell>
+        <mxCell id="spaceflightmodel" parent="1" style="html=1;rounded=1;whiteSpace=wrap;fillColor=#e1d5e7;strokeColor=#9673a6;align=left;spacingLeft=8;fontSize=11;verticalAlign=top;spacingTop=6;" value="&lt;b&gt;SpaceFlight&lt;/b&gt; — normalized article (provider-agnostic output model)&lt;br&gt; provider · provider_article_id · title · url&lt;br&gt; summary · content · authors: list[str]&lt;br&gt; published_at · source_name · language · category&lt;br&gt; raw: dict  ← original API payload preserved for debugging / future fields" vertex="1">
+          <mxGeometry height="100" width="570" x="310" y="213" as="geometry" />
+        </mxCell>
+        <mxCell id="s3_header" parent="1" style="text;html=1;strokeColor=none;fillColor=#d5e8d4;align=left;verticalAlign=middle;spacingLeft=10;fontSize=13;fontStyle=1;rounded=1;" value="③ TRANSPORT &amp; RELIABILITY  (transport.py)" vertex="1">
+          <mxGeometry height="28" width="860" x="20" y="340" as="geometry" />
+        </mxCell>
+        <mxCell id="GzFe3XRWPnQHIMSGgCkI-3" edge="1" parent="1" source="httpclient" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.75;exitDx=0;exitDy=0;">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="280" y="437.8148148148148" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="httpclient" parent="1" style="html=1;rounded=1;whiteSpace=wrap;fillColor=#d5e8d4;strokeColor=#82b366;align=left;spacingLeft=8;fontSize=11;verticalAlign=top;spacingTop=6;" value="&lt;b&gt;HttpClient&lt;/b&gt;  (Protocol)&lt;br&gt; Structural typing — any obj with .get()&lt;br&gt; Impl: requests.Session (shared)&lt;br&gt; Enables DI &amp; test mocking" vertex="1">
+          <mxGeometry height="80" width="230" x="30" y="378" as="geometry" />
+        </mxCell>
+        <mxCell id="ratelimiter" parent="1" style="html=1;rounded=1;whiteSpace=wrap;fillColor=#d5e8d4;strokeColor=#82b366;align=left;spacingLeft=8;fontSize=11;verticalAlign=top;spacingTop=6;" value="&lt;b&gt;RateLimiter&lt;/b&gt;&lt;br&gt; Enforces min delay between successive calls&lt;br&gt; delay ← FetchConfig.get(rate_limit_seconds, provider)&lt;br&gt; Separate instance per provider&lt;br&gt; wait() sleeps remaining time since last call" vertex="1">
+          <mxGeometry height="80" width="280" x="280" y="378" as="geometry" />
+        </mxCell>
+        <mxCell id="GzFe3XRWPnQHIMSGgCkI-2" edge="1" parent="1" source="withretry" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="560" y="439.2962962962963" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="withretry" parent="1" style="html=1;rounded=1;whiteSpace=wrap;fillColor=#d5e8d4;strokeColor=#82b366;align=left;spacingLeft=8;fontSize=11;verticalAlign=top;spacingTop=6;" value="&lt;b&gt;with_retry()&lt;/b&gt;&lt;br&gt; Up to max_attempts with exponential backoff (backoff × 2^attempt)&lt;br&gt; Retriable: 429 · 500 · 502 · 503 · 504 · Timeout · ConnectionError&lt;br&gt; Non-retriable: 4xx (excl. 429) → raises ArticleFetchError immediately&lt;br&gt; All attempts exhausted → raises ArticleFetchError" vertex="1">
+          <mxGeometry height="122" width="300" x="580" y="378" as="geometry" />
+        </mxCell>
+        <mxCell id="s4_header" parent="1" style="text;html=1;strokeColor=none;fillColor=#ffe6cc;align=left;verticalAlign=middle;spacingLeft=10;fontSize=13;fontStyle=1;rounded=1;" value="④ PROVIDER COMPONENTS  (providers/)  —  one component per API connection" vertex="1">
+          <mxGeometry height="28" width="860" x="20" y="550" as="geometry" />
+        </mxCell>
+        <mxCell id="gnews_bg" parent="1" style="rounded=1;fillColor=#ffe6cc;strokeColor=#d79b00;opacity=50;" value="" vertex="1">
+          <mxGeometry height="300" width="390" x="30" y="588" as="geometry" />
+        </mxCell>
+        <mxCell id="gnews_title" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;fontSize=12;fontStyle=1;" value="GNewsProvider  (providers/gnews.py)" vertex="1">
+          <mxGeometry height="20" width="370" x="42" y="594" as="geometry" />
+        </mxCell>
+        <mxCell id="g1" parent="1" style="rounded=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=11;" value="1. rate_limiter.wait()" vertex="1">
+          <mxGeometry height="34" width="170" x="50" y="622" as="geometry" />
+        </mxCell>
+        <mxCell id="g2" parent="1" style="html=1;rounded=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=11;whiteSpace=wrap;" value="2. _build_params(query)&lt;br&gt;token · max · lang · sortby · q" vertex="1">
+          <mxGeometry height="42" width="170" x="234" y="618" as="geometry" />
+        </mxCell>
+        <mxCell id="g3" parent="1" style="rounded=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=11;" value="3. with_retry( GET /api/v4/search )" vertex="1">
+          <mxGeometry height="34" width="250" x="50" y="674" as="geometry" />
+        </mxCell>
+        <mxCell id="g4" parent="1" style="html=1;rounded=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=11;whiteSpace=wrap;align=left;spacingLeft=6;" value="4. _parse(raw, language)&lt;br&gt;url → provider_article_id (stable key)&lt;br&gt;authors = [] (GNews API omits authors)" vertex="1">
+          <mxGeometry height="54" width="280" x="50" y="726" as="geometry" />
+        </mxCell>
+        <mxCell id="g5" parent="1" style="rounded=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=11;" value="→ list[SpaceFlight]  (provider=&#39;gnews&#39;)" vertex="1">
+          <mxGeometry height="34" width="270" x="50" y="796" as="geometry" />
+        </mxCell>
+        <mxCell id="g_err" parent="1" style="html=1;rounded=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=10;whiteSpace=wrap;" value="ArticleFetchError (retries exhausted) → NewsProviderError&lt;br&gt;ArticleParseError (bad shape) → NewsProviderError" vertex="1">
+          <mxGeometry height="36" width="360" x="50" y="842" as="geometry" />
+        </mxCell>
+        <mxCell id="sf_bg" parent="1" style="rounded=1;fillColor=#ffe6cc;strokeColor=#d79b00;opacity=50;" value="" vertex="1">
+          <mxGeometry height="300" width="420" x="440" y="588" as="geometry" />
+        </mxCell>
+        <mxCell id="sf_title" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;fontSize=12;fontStyle=1;" value="SpaceflightNewsProvider  (providers/spaceflight.py)" vertex="1">
+          <mxGeometry height="20" width="400" x="452" y="594" as="geometry" />
+        </mxCell>
+        <mxCell id="sf1" parent="1" style="html=1;rhombus;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=10;whiteSpace=wrap;verticalAlign=middle;" value="1. fetch(query)&lt;br&gt;query.q set?&lt;br&gt;yes → search · no → random" vertex="1">
+          <mxGeometry height="80" width="170" x="454" y="616" as="geometry" />
+        </mxCell>
+        <mxCell id="sf2a" parent="1" style="html=1;rounded=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=10;whiteSpace=wrap;align=left;spacingLeft=6;" value="2a. _fetch_by_search()&lt;br&gt;rate_limiter.wait()&lt;br&gt;GET /articles/?search=q&amp;limit=N" vertex="1">
+          <mxGeometry height="54" width="200" x="642" y="616" as="geometry" />
+        </mxCell>
+        <mxCell id="sf2b" parent="1" style="html=1;rounded=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=10;whiteSpace=wrap;align=left;spacingLeft=6;" value="2b. _fetch_random(n)&lt;br&gt;_fetch_total_count() → total&lt;br&gt;random.sample(range(total), n) offsets&lt;br&gt;_fetch_at_offset(i) × n calls&lt;br&gt;└ rate_limiter.wait() each" vertex="1">
+          <mxGeometry height="76" width="220" x="454" y="710" as="geometry" />
+        </mxCell>
+        <mxCell id="sf3" parent="1" style="html=1;rounded=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=10;whiteSpace=wrap;align=left;spacingLeft=6;" value="3. _parse(raw)&lt;br&gt;id (int) → provider_article_id&lt;br&gt;authors: [{name}] extracted to list[str]" vertex="1">
+          <mxGeometry height="56" width="160" x="688" y="710" as="geometry" />
+        </mxCell>
+        <mxCell id="sf4" parent="1" style="rounded=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=11;" value="→ list[SpaceFlight]  (provider=&#39;spaceflight&#39;)" vertex="1">
+          <mxGeometry height="34" width="280" x="454" y="802" as="geometry" />
+        </mxCell>
+        <mxCell id="sf_err" parent="1" style="html=1;rounded=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=10;whiteSpace=wrap;" value="ArticleFetchError (retries exhausted) → NewsProviderError&lt;br&gt;ArticleParseError (bad shape) → NewsProviderError" vertex="1">
+          <mxGeometry height="36" width="360" x="454" y="842" as="geometry" />
+        </mxCell>
+        <mxCell id="gnews_api" parent="1" style="html=1;shape=cylinder3;whiteSpace=wrap;fillColor=#f8cecc;strokeColor=#b85450;fontSize=11;" value="GNews API&lt;br&gt;gnews.io/api/v4/search" vertex="1">
+          <mxGeometry height="60" width="150" x="890" y="630" as="geometry" />
+        </mxCell>
+        <mxCell id="sf_api" parent="1" style="html=1;shape=cylinder3;whiteSpace=wrap;fillColor=#f8cecc;strokeColor=#b85450;fontSize=11;" value="Spaceflight News API&lt;br&gt;spaceflightnewsapi.net/v4" vertex="1">
+          <mxGeometry height="60" width="150" x="900" y="760" as="geometry" />
+        </mxCell>
+        <mxCell id="s5_header" parent="1" style="text;html=1;strokeColor=none;fillColor=#d5e8d4;align=left;verticalAlign=middle;spacingLeft=10;fontSize=13;fontStyle=1;rounded=1;" value="⑤ AGGREGATION &amp; FAULT ISOLATION  (aggregator.py)" vertex="1">
+          <mxGeometry height="28" width="860" x="20" y="920" as="geometry" />
+        </mxCell>
+        <mxCell id="aggregator" parent="1" style="html=1;rounded=1;whiteSpace=wrap;fillColor=#d5e8d4;strokeColor=#82b366;align=left;spacingLeft=8;fontSize=11;verticalAlign=top;spacingTop=6;" value="&lt;b&gt;NewsAggregator.fetch_all()&lt;/b&gt;&lt;br&gt; Fan-out: dispatches NewsQuery to each provider (per_provider dict allows different query per provider)&lt;br&gt; Fault isolation: NewsProviderError → print WARNING to stderr, continue — one dead provider never kills the pipeline&lt;br&gt; _deduplicate(): removes articles with duplicate URLs, first-seen order wins" vertex="1">
+          <mxGeometry height="90" width="820" x="30" y="958" as="geometry" />
+        </mxCell>
+        <mxCell id="s6_header" parent="1" style="text;html=1;strokeColor=none;fillColor=#fff2cc;align=left;verticalAlign=middle;spacingLeft=10;fontSize=13;fontStyle=1;rounded=1;" value="⑥ DATA MASSAGE / ANALYSIS  (analyzer.py)  — stateless pure functions, zero I/O, run once per provider" vertex="1">
+          <mxGeometry height="28" width="860" x="20" y="1080" as="geometry" />
+        </mxCell>
+        <mxCell id="a1" parent="1" style="html=1;rounded=1;whiteSpace=wrap;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=10;verticalAlign=top;spacingTop=4;" value="extract_text_corpus()&lt;br&gt;title + summary&lt;br&gt;→ single string" vertex="1">
+          <mxGeometry height="60" width="150" x="30" y="1118" as="geometry" />
+        </mxCell>
+        <mxCell id="a2" parent="1" style="html=1;rounded=1;whiteSpace=wrap;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=10;verticalAlign=top;spacingTop=4;" value="tokenize()&lt;br&gt;lowercase, strip non-alpha&lt;br&gt;→ list[str]" vertex="1">
+          <mxGeometry height="60" width="150" x="200" y="1118" as="geometry" />
+        </mxCell>
+        <mxCell id="a3" parent="1" style="html=1;rounded=1;whiteSpace=wrap;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=10;verticalAlign=top;spacingTop=4;" value="word_frequency()&lt;br&gt;Counter(tokens)&lt;br&gt;→ word → count" vertex="1">
+          <mxGeometry height="60" width="150" x="370" y="1118" as="geometry" />
+        </mxCell>
+        <mxCell id="a4" parent="1" style="html=1;rounded=1;whiteSpace=wrap;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=10;verticalAlign=top;spacingTop=4;" value="least_common_words_containing_l()&lt;br&gt;filter words containing &#39;l&#39;&lt;br&gt;sort asc by count, alpha tie-break&lt;br&gt;→ top 5" vertex="1">
+          <mxGeometry height="60" width="190" x="540" y="1118" as="geometry" />
+        </mxCell>
+        <mxCell id="a5" parent="1" style="html=1;rounded=1;whiteSpace=wrap;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=10;verticalAlign=top;spacingTop=4;" value="count_authors()&lt;br&gt;Counter(all authors)&lt;br&gt;→ author → article count" vertex="1">
+          <mxGeometry height="56" width="200" x="30" y="1200" as="geometry" />
+        </mxCell>
+        <mxCell id="a6" parent="1" style="html=1;rounded=1;whiteSpace=wrap;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=10;verticalAlign=top;spacingTop=4;" value="authors_appearing_more_than_once()&lt;br&gt;filter count &gt; 1&lt;br&gt;sort desc count, alpha tie-break" vertex="1">
+          <mxGeometry height="56" width="230" x="250" y="1200" as="geometry" />
+        </mxCell>
+        <mxCell id="s7_header" parent="1" style="text;html=1;strokeColor=none;fillColor=#f5f5f5;strokeColor=#666666;align=left;verticalAlign=middle;spacingLeft=10;fontSize=13;fontStyle=1;rounded=1;" value="⑦ OUTPUT GENERATION  (reporter.py)" vertex="1">
+          <mxGeometry height="28" width="860" x="20" y="1290" as="geometry" />
+        </mxCell>
+        <mxCell id="build_report" parent="1" style="html=1;rounded=1;whiteSpace=wrap;fillColor=#f5f5f5;strokeColor=#666666;align=left;spacingLeft=8;fontSize=11;verticalAlign=top;spacingTop=6;" value="&lt;b&gt;build_report()&lt;/b&gt;&lt;br&gt; generated_at · article_count&lt;br&gt; articles[] with raw payload&lt;br&gt; analysis.least_common_words_containing_l&lt;br&gt; analysis.authors_appearing_more_than_once" vertex="1">
+          <mxGeometry height="100" width="280" x="30" y="1328" as="geometry" />
+        </mxCell>
+        <mxCell id="write_report" parent="1" style="html=1;rounded=1;whiteSpace=wrap;fillColor=#f5f5f5;strokeColor=#666666;align=left;spacingLeft=8;fontSize=11;verticalAlign=top;spacingTop=6;" value="&lt;b&gt;write_report()&lt;/b&gt;&lt;br&gt; json.dump(indent=2, ensure_ascii=False)&lt;br&gt; OSError → ReportWriteError → sys.exit(2)&lt;br&gt; output_filename() → timestamped (UTC)" vertex="1">
+          <mxGeometry height="100" width="280" x="330" y="1328" as="geometry" />
+        </mxCell>
+        <mxCell id="output_gnews" parent="1" style="html=1;shape=document;whiteSpace=wrap;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=11;" value="gnews/&lt;br&gt;summary_results_quotes_&lt;br&gt;YYYYMMDDHHMMSS.json" vertex="1">
+          <mxGeometry height="70" width="150" x="640" y="1328" as="geometry" />
+        </mxCell>
+        <mxCell id="output_sf" parent="1" style="html=1;shape=document;whiteSpace=wrap;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=11;" value="spaceflight/&lt;br&gt;summary_results_quotes_&lt;br&gt;YYYYMMDDHHMMSS.json" vertex="1">
+          <mxGeometry height="70" width="150" x="642" y="1428" as="geometry" />
+        </mxCell>
+        <mxCell id="e_fc_gnews" edge="1" parent="1" source="fetchconfig" style="edgeStyle=orthogonalEdgeStyle;fontSize=10;exitX=0;exitY=0.5;exitFixed=0;entryX=0.5;entryY=0;exitDx=0;exitDy=0;" target="gnews_bg" value="fetch_config">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="-30" y="95" />
+              <mxPoint x="-30" y="334" />
+              <mxPoint x="-10" y="334" />
+              <mxPoint x="-10" y="528" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e_fc_sf" edge="1" parent="1" source="fetchconfig" style="edgeStyle=orthogonalEdgeStyle;fontSize=10;exitX=0.75;exitY=1;exitFixed=0;entryX=0.5;entryY=0;" target="sf_bg" value="fetch_config">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="365" y="150" />
+              <mxPoint x="1080" y="150" />
+              <mxPoint x="1080" y="334" />
+              <mxPoint x="930" y="334" />
+              <mxPoint x="930" y="528" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e_settings_gnews" edge="1" parent="1" source="settings" style="edgeStyle=orthogonalEdgeStyle;fontSize=10;dashed=1;strokeColor=#9673a6;" target="gnews_bg" value="api_key">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="695" y="160" />
+              <mxPoint x="225" y="160" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="6DHbQe4S6gDedcDhkIGh-1" connectable="0" parent="e_settings_gnews" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" value="Text" vertex="1">
+          <mxGeometry relative="1" x="-0.3887" y="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e_nq_gnews" edge="1" parent="1" source="newsquery" style="edgeStyle=orthogonalEdgeStyle;fontSize=10;" target="gnews_bg" value="IRAN_QUERY">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="-60" y="263" />
+              <mxPoint x="-60" y="678" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e_nq_sf" edge="1" parent="1" source="newsquery" style="edgeStyle=orthogonalEdgeStyle;fontSize=10;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" target="sf_bg" value="SPACEFLIGHT_QUERY">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="160" y="320" />
+              <mxPoint x="1000" y="320" />
+              <mxPoint x="1000" y="528" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e_rl_gnews" edge="1" parent="1" source="ratelimiter" style="edgeStyle=orthogonalEdgeStyle;fontSize=10;" target="gnews_bg" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_rl_sf" edge="1" parent="1" source="ratelimiter" style="edgeStyle=orthogonalEdgeStyle;fontSize=10;" target="sf_bg" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_wr_gnews" edge="1" parent="1" source="withretry" style="edgeStyle=orthogonalEdgeStyle;fontSize=10;dashed=1;" target="gnews_bg" value="used by">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_g1_g3" edge="1" parent="1" source="g1" style="edgeStyle=orthogonalEdgeStyle;" target="g3" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_g2_g3" edge="1" parent="1" source="g2" style="edgeStyle=orthogonalEdgeStyle;" target="g3" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_g3_g4" edge="1" parent="1" source="g3" style="edgeStyle=orthogonalEdgeStyle;fontSize=10;" target="g4" value="response.json()">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_g4_g5" edge="1" parent="1" source="g4" style="edgeStyle=orthogonalEdgeStyle;" target="g5" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_gnews_api" edge="1" parent="1" source="g3" style="edgeStyle=orthogonalEdgeStyle;fontSize=10;dashed=1;strokeColor=#b85450;" target="gnews_api" value="HTTPS GET">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="965" y="691" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e_sf1_sf2a" edge="1" parent="1" source="sf1" style="edgeStyle=orthogonalEdgeStyle;fontSize=10;" target="sf2a" value="q set">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_sf1_sf2b" edge="1" parent="1" source="sf1" style="edgeStyle=orthogonalEdgeStyle;fontSize=10;" target="sf2b" value="q empty">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_sf2a_sf3" edge="1" parent="1" source="sf2a" style="edgeStyle=orthogonalEdgeStyle;" target="sf3" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_sf2b_sf3" edge="1" parent="1" source="sf2b" style="edgeStyle=orthogonalEdgeStyle;" target="sf3" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_sf3_sf4" edge="1" parent="1" source="sf3" style="edgeStyle=orthogonalEdgeStyle;" target="sf4" value="">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="768" y="780" />
+              <mxPoint x="594" y="780" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e_sf_api" edge="1" parent="1" source="sf2b" style="edgeStyle=orthogonalEdgeStyle;fontSize=10;dashed=1;strokeColor=#b85450;" target="sf_api" value="HTTPS GET">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="564" y="790" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e_g5_agg" edge="1" parent="1" source="g5" style="edgeStyle=orthogonalEdgeStyle;fontSize=10;strokeWidth=2;strokeColor=#23901f;" target="aggregator" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_sf4_agg" edge="1" parent="1" source="sf4" style="edgeStyle=orthogonalEdgeStyle;fontSize=10;strokeWidth=2;strokeColor=#23901f;" target="aggregator" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_gerr_agg" edge="1" parent="1" source="g_err" style="edgeStyle=orthogonalEdgeStyle;fontSize=9;dashed=1;strokeColor=#b85450;fontColor=#b85450;" target="aggregator" value="NewsProviderError → warn + continue">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_sferr_agg" edge="1" parent="1" source="sf_err" style="edgeStyle=orthogonalEdgeStyle;fontSize=9;dashed=1;strokeColor=#b85450;fontColor=#b85450;" target="aggregator" value="NewsProviderError → warn + continue">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_agg_a1" edge="1" parent="1" source="aggregator" style="edgeStyle=orthogonalEdgeStyle;fontSize=10;strokeWidth=2;strokeColor=#23901f;" target="a1" value="">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="440" y="1070" />
+              <mxPoint x="105" y="1070" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e_a1_a2" edge="1" parent="1" source="a1" style="edgeStyle=orthogonalEdgeStyle;" target="a2" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_a2_a3" edge="1" parent="1" source="a2" style="edgeStyle=orthogonalEdgeStyle;" target="a3" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_a3_a4" edge="1" parent="1" source="a3" style="edgeStyle=orthogonalEdgeStyle;" target="a4" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_a1_a5" edge="1" parent="1" source="a1" style="edgeStyle=orthogonalEdgeStyle;" target="a5" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_a5_a6" edge="1" parent="1" source="a5" style="edgeStyle=orthogonalEdgeStyle;" target="a6" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_a4_rep" edge="1" parent="1" source="a4" style="edgeStyle=orthogonalEdgeStyle;strokeWidth=2;strokeColor=#23901f;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" target="build_report" value="">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="770" y="1148" />
+              <mxPoint x="770" y="1280" />
+              <mxPoint x="170" y="1280" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e_a6_rep" edge="1" parent="1" source="a6" style="edgeStyle=orthogonalEdgeStyle;strokeWidth=2;strokeColor=#23901f;" target="build_report" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_br_wr" edge="1" parent="1" source="build_report" style="edgeStyle=orthogonalEdgeStyle;strokeWidth=2;" target="write_report" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_wr_og" edge="1" parent="1" source="write_report" style="edgeStyle=orthogonalEdgeStyle;" target="output_gnews" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_wr_osf" edge="1" parent="1" source="write_report" style="edgeStyle=orthogonalEdgeStyle;" target="output_sf" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

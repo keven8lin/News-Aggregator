@@ -1,0 +1,281 @@
+{
+  "generated_at": "2026-03-26T04:00:20.862780",
+  "article_count": 10,
+  "articles": [
+    {
+      "provider": "gnews",
+      "provider_article_id": "https://www.sfgate.com/news/world/article/iranian-military-mocks-trump-s-claim-of-us-iran-22095223.php",
+      "title": "Iran rejects US ceasefire plan, issues its own demands as strikes land across the Mideast",
+      "url": "https://www.sfgate.com/news/world/article/iranian-military-mocks-trump-s-claim-of-us-iran-22095223.php",
+      "source_name": "SFGATE",
+      "published_at": "2026-03-25T15:59:04Z",
+      "authors": [],
+      "raw": {
+        "id": "c05682142e7985e67f460ef086f6f7aa",
+        "title": "Iran rejects US ceasefire plan, issues its own demands as strikes land across the Mideast",
+        "description": "Iran dismissed an American plan to pause the war in the Middle East and launched more attacks on Israel and Gulf Arab countries. Iran’s defiance came as Israel launched airstrikes on Tehran on...",
+        "content": "DUBAI, United Arab Emirates (AP) — Iran on Wednesday dismissed an American plan to pause the war in the Middle East and launched more attacks on Israel and Gulf Arab countries, including an assault that sparked a huge fire at Kuwait International Air... [6883 chars]",
+        "url": "https://www.sfgate.com/news/world/article/iranian-military-mocks-trump-s-claim-of-us-iran-22095223.php",
+        "image": "https://s.hdnux.com/photos/01/65/46/30/30828043/3/rawImage.jpg",
+        "publishedAt": "2026-03-25T15:59:04Z",
+        "lang": "en",
+        "source": {
+          "id": "384b3c633f1aa3e0a1bcb208f94d519d",
+          "name": "SFGATE",
+          "url": "https://www.sfgate.com",
+          "country": "us"
+        }
+      }
+    },
+    {
+      "provider": "gnews",
+      "provider_article_id": "https://www.devdiscourse.com/article/politics/3850698-indias-stance-in-the-west-asia-conflict-a-call-for-debate",
+      "title": "India's Stance in the West Asia Conflict: A Call for Debate",
+      "url": "https://www.devdiscourse.com/article/politics/3850698-indias-stance-in-the-west-asia-conflict-a-call-for-debate",
+      "source_name": "Devdiscourse",
+      "published_at": "2026-03-25T15:51:21Z",
+      "authors": [],
+      "raw": {
+        "id": "278c4b9c389017cd17f59fc9a643ae67",
+        "title": "India's Stance in the West Asia Conflict: A Call for Debate",
+        "description": "The Indian government, led by Prime Minister Narendra Modi, is under scrutiny from the Opposition regarding its response to the West Asia conflict involving Iran, Israel, and the US. During a meeting, officials conveyed India's efforts to safeguard its diaspora and energy needs, while Opposition demanded parliamentary debate.",
+        "content": "Prime Minister Narendra Modi emphasized to US President Donald Trump the urgency of ending the West Asia conflict, the government informed the Opposition at a heated all-party meeting. Pakistan's mediation efforts were dismissed as a repeated tactic ... [759 chars]",
+        "url": "https://www.devdiscourse.com/article/politics/3850698-indias-stance-in-the-west-asia-conflict-a-call-for-debate",
+        "image": "https://www.devdiscourse.com/remote.axd?https://devdiscourse.blob.core.windows.net/imagegallery/27_05_2019_11_49_54_2610105.jpg?width=920&format=jpeg",
+        "publishedAt": "2026-03-25T15:51:21Z",
+        "lang": "en",
+        "source": {
+          "id": "c6a01ba91c1a2bc3f53f4707110bfee5",
+          "name": "Devdiscourse",
+          "url": "https://www.devdiscourse.com",
+          "country": "in"
+        }
+      }
+    },
+    {
+      "provider": "gnews",
+      "provider_article_id": "https://www.independent.co.uk/tv/news/trump-hegseth-us-iran-bombing-video-b2945467.html",
+      "title": "Trump reacts as Hegseth says US will keep pressure on Iran",
+      "url": "https://www.independent.co.uk/tv/news/trump-hegseth-us-iran-bombing-video-b2945467.html",
+      "source_name": "The Independent",
+      "published_at": "2026-03-25T15:50:25Z",
+      "authors": [],
+      "raw": {
+        "id": "191e67a8026fedfef7527e730fd1ee70",
+        "title": "Trump reacts as Hegseth says US will keep pressure on Iran",
+        "description": "This is how Donald Trump reacted to Pete Hegseth stating that the US will keep on applying pressure in Iran. Speaking in the Oval Office on Tuesday (24 March), the Secretary of Defense said that it was his job to ensure that the US “keeps our hand on that throttle” and continues attacks for “as long and as hard as necessary”. The president could be seen raising his eyebrow at the remark. His comment appears to be in contrast to Mr Trump’s 15-point plan, which is aimed at ending the war for good. Elsewhere in the conference, Mr Trump said that Mr Hegseth does not want to end the conflict. “Our Secretary of War doesn't want peace, he wants war,” he said.",
+        "content": "This is how Donald Trump reacted to Pete Hegseth stating that the US will keep on applying pressure in Iran.\nSpeaking in the Oval Office on Tuesday (24 March), the Secretary of Defense said that it was his job to ensure that the US “keeps our hand on... [410 chars]",
+        "url": "https://www.independent.co.uk/tv/news/trump-hegseth-us-iran-bombing-video-b2945467.html",
+        "image": "https://cdn.jwplayer.com/v2/media/xByvWUtg/poster.jpg?width=720",
+        "publishedAt": "2026-03-25T15:50:25Z",
+        "lang": "en",
+        "source": {
+          "id": "97497c18f5cb431f5f324b3d8643c24f",
+          "name": "The Independent",
+          "url": "https://www.independent.co.uk",
+          "country": "gb"
+        }
+      }
+    },
+    {
+      "provider": "gnews",
+      "provider_article_id": "https://www.kentonline.co.uk/news/national/businesses-face-energy-bill-rises-of-up-to-80-due-to-iran-war-price-shock-164543/",
+      "title": "Businesses face energy bill rises of up to 80% due to Iran war price shock",
+      "url": "https://www.kentonline.co.uk/news/national/businesses-face-energy-bill-rises-of-up-to-80-due-to-iran-war-price-shock-164543/",
+      "source_name": "Kent Online",
+      "published_at": "2026-03-25T15:49:05Z",
+      "authors": [],
+      "raw": {
+        "id": "799ba12bbfa06937176b09d3ba0860f6",
+        "title": "Businesses face energy bill rises of up to 80% due to Iran war price shock",
+        "description": "April is traditionally a major month for companies to roll off fixed rates.",
+        "content": "Businesses are facing gas bill hikes of up to 80% as the Iran war and disruption to key shipping routes sends wholesale prices soaring, according to experts.\nCornwall Insight said many companies are set for painful increases in their gas and electric... [1866 chars]",
+        "url": "https://www.kentonline.co.uk/news/national/businesses-face-energy-bill-rises-of-up-to-80-due-to-iran-war-price-shock-164543/",
+        "image": "https://www.kentonline.co.uk/_media/img/CU65BL4106Q2WX0ZHVRJ.jpg",
+        "publishedAt": "2026-03-25T15:49:05Z",
+        "lang": "en",
+        "source": {
+          "id": "bd5334f11d6df8539ffad4ffc70e3f89",
+          "name": "Kent Online",
+          "url": "https://www.kentonline.co.uk",
+          "country": "gb"
+        }
+      }
+    },
+    {
+      "provider": "gnews",
+      "provider_article_id": "https://www.dailyexcelsior.com/iran-dismisses-us-ceasefire-plan-issues-counterproposal-as-strikes-land-across-mideast/",
+      "title": "Iran Dismisses US Ceasefire Plan, Issues Counterproposal As Strikes Land Across Mideast",
+      "url": "https://www.dailyexcelsior.com/iran-dismisses-us-ceasefire-plan-issues-counterproposal-as-strikes-land-across-mideast/",
+      "source_name": "Daily Excelsior",
+      "published_at": "2026-03-25T15:45:32Z",
+      "authors": [],
+      "raw": {
+        "id": "b892d5d5c21d83d58075e70f985511c3",
+        "title": "Iran Dismisses US Ceasefire Plan, Issues Counterproposal As Strikes Land Across Mideast",
+        "description": "Dubai, Mar 25: Iranian state television’s English-language broadcaster quoted an anonymous official on Wednesday saying that Iran had rejected America’s 15-point ceasefire proposal. Pakistani officials described the proposal broadly as touching on sanctions relief, civilian nuclear cooperation, a rollback of Iran’s nuclear program, monitoring by the International Atomic Energy Agency, missile limits and access for shipping through the Strait of Hormuz, the narrow mouth of the Persian Gulf. The Trump administration reportedly offered the plan to Iran as the U.S. […]",
+        "content": "Dubai, Mar 25: Iranian state television’s English-language broadcaster quoted an anonymous official on Wednesday saying that Iran had rejected America’s 15-point ceasefire proposal.\nPakistani officials described the proposal broadly as touching on sa... [9129 chars]",
+        "url": "https://www.dailyexcelsior.com/iran-dismisses-us-ceasefire-plan-issues-counterproposal-as-strikes-land-across-mideast/",
+        "image": "https://www.dailyexcelsior.com/wp-content/uploads/2026/03/iran-36.jpg",
+        "publishedAt": "2026-03-25T15:45:32Z",
+        "lang": "en",
+        "source": {
+          "id": "28bc60a23a7bf89e60f893506992a3fe",
+          "name": "Daily Excelsior",
+          "url": "https://www.dailyexcelsior.com",
+          "country": "in"
+        }
+      }
+    },
+    {
+      "provider": "gnews",
+      "provider_article_id": "https://www.independent.co.uk/news/uk/home-news/energy-bills-iran-war-fuel-rachel-reeves-b2945493.html",
+      "title": "Readers on how to tackle soaring energy bills in wake of Iran war",
+      "url": "https://www.independent.co.uk/news/uk/home-news/energy-bills-iran-war-fuel-rachel-reeves-b2945493.html",
+      "source_name": "The Independent",
+      "published_at": "2026-03-25T15:42:13Z",
+      "authors": [],
+      "raw": {
+        "id": "cad322b335a163aa307cd11ea58bed48",
+        "title": "Readers on how to tackle soaring energy bills in wake of Iran war",
+        "description": "Our community is divided on how to tackle rising energy costs, with many warning support is limited by public finances while others call for policy changes or personal behaviour shifts in the face of a global crisis",
+        "content": "Independent readers are divided over how the government should respond to soaring energy and fuel costs, with some backing Rachel Reeves’s targeted approach while others argue it fails to meet the scale of the crisis.\nSeveral commenters highlighted t... [6231 chars]",
+        "url": "https://www.independent.co.uk/news/uk/home-news/energy-bills-iran-war-fuel-rachel-reeves-b2945493.html",
+        "image": "https://static.independent.co.uk/2026/03/25/15/17/Engagement-overlays-(87).png?trim=0,0,0,0&width=1200&height=800&crop=1200:800",
+        "publishedAt": "2026-03-25T15:42:13Z",
+        "lang": "en",
+        "source": {
+          "id": "97497c18f5cb431f5f324b3d8643c24f",
+          "name": "The Independent",
+          "url": "https://www.independent.co.uk",
+          "country": "gb"
+        }
+      }
+    },
+    {
+      "provider": "gnews",
+      "provider_article_id": "https://www.businesstoday.in/latest/corporate/story/if-the-us-iran-conflict-were-to-end-tomorrow-these-5-things-can-happen-immediately-522382-2026-03-25",
+      "title": "If the US Iran conflict were to end tomorrow these 5 things can happen immediately",
+      "url": "https://www.businesstoday.in/latest/corporate/story/if-the-us-iran-conflict-were-to-end-tomorrow-these-5-things-can-happen-immediately-522382-2026-03-25",
+      "source_name": "Business Today",
+      "published_at": "2026-03-25T15:38:24Z",
+      "authors": [],
+      "raw": {
+        "id": "a3caade7dbda082f9fe93587a5d658dd",
+        "title": "If the US Iran conflict were to end tomorrow these 5 things can happen immediately",
+        "description": "Tensions between the US and Iran have kept global markets volatile, with crude oil, LNG and energy stocks reacting sharply to every escalation. A new CLSA report says that if the conflict were to end suddenly, markets could see immediate moves across commodities and oil & gas stocks.",
+        "content": "The ongoing conflict in the West Asia has kept global energy markets on edge, pushing crude oil, LNG, and freight rates sharply higher. A recent CLSA report titled “If the war were to end tomorrow…” explains that even a sudden de-escalation could tri... [2863 chars]",
+        "url": "https://www.businesstoday.in/latest/corporate/story/if-the-us-iran-conflict-were-to-end-tomorrow-these-5-things-can-happen-immediately-522382-2026-03-25",
+        "image": "https://akm-img-a-in.tosshub.com/businesstoday/images/story/202603/69c4005ecf059-insider-trading-trump-iran-comments-253345244-16x9.jpeg",
+        "publishedAt": "2026-03-25T15:38:24Z",
+        "lang": "en",
+        "source": {
+          "id": "76a2f820b104591b97fed1b0932cec38",
+          "name": "Business Today",
+          "url": "https://www.businesstoday.in",
+          "country": "in"
+        }
+      }
+    },
+    {
+      "provider": "gnews",
+      "provider_article_id": "https://www.investing.com/analysis/the-energy-report-15point-peace-plan-pressures-oil-and-iran-200677257",
+      "title": "The Energy Report: 15-Point Peace Plan Pressures Oil and Iran",
+      "url": "https://www.investing.com/analysis/the-energy-report-15point-peace-plan-pressures-oil-and-iran-200677257",
+      "source_name": "Investing.com",
+      "published_at": "2026-03-25T15:34:05Z",
+      "authors": [],
+      "raw": {
+        "id": "48eaf9d29c600564b045199e7dc637d3",
+        "title": "The Energy Report: 15-Point Peace Plan Pressures Oil and Iran",
+        "description": "Market Analysis by covering: Valero Energy Corporation, Brent Oil Futures, Crude Oil WTI Futures, Natural Gas Futures. Read 's Market Analysis on Investing.com",
+        "content": "Oil prices are down around $5 following reports that the Trump administration sent a 15-point peace plan to end the war, which has been received by the Iranians this morning that if Iran accepts would be a major victory for the world thanks to the US... [9175 chars]",
+        "url": "https://www.investing.com/analysis/the-energy-report-15point-peace-plan-pressures-oil-and-iran-200677257",
+        "image": "https://i-invdn-com.investing.com/redesign/images/seo/investingcom_analysis_og.jpg",
+        "publishedAt": "2026-03-25T15:34:05Z",
+        "lang": "en",
+        "source": {
+          "id": "e86028f8795c9864b8757b36b53954ef",
+          "name": "Investing.com",
+          "url": "https://www.investing.com",
+          "country": "us"
+        }
+      }
+    },
+    {
+      "provider": "gnews",
+      "provider_article_id": "https://www.financialexpress.com/world-news/former-mi6-chief-explains-why-iran-has-upper-hand-in-war-with-us-israel-i-regret-having-come-to-this-conclusion/4184253/",
+      "title": "Former MI6 Chief explains why Iran has ‘upper hand’ in war with US, Israel: ‘I regret having come to this conclusion’",
+      "url": "https://www.financialexpress.com/world-news/former-mi6-chief-explains-why-iran-has-upper-hand-in-war-with-us-israel-i-regret-having-come-to-this-conclusion/4184253/",
+      "source_name": "The Financial Express",
+      "published_at": "2026-03-25T15:32:41Z",
+      "authors": [],
+      "raw": {
+        "id": "ecb08f9ec730fd70291b9492fbf6f9cf",
+        "title": "Former MI6 Chief explains why Iran has ‘upper hand’ in war with US, Israel: ‘I regret having come to this conclusion’",
+        "description": "Former MI6 chief Alex Younger has claimed that Iran currently holds the “upper hand” in its conflict with the US and Israel, citing strategic resilience and miscalculations by Washington. His remarks come amid escalating tensions and global concerns over energy security.",
+        "content": "A former British intelligence chief has suggested that Iran currently holds a strategic advantage in its ongoing conflict involving the United States and Israel, even as hostilities continue to escalate across the region.\nThe assessment comes at a ti... [2771 chars]",
+        "url": "https://www.financialexpress.com/world-news/former-mi6-chief-explains-why-iran-has-upper-hand-in-war-with-us-israel-i-regret-having-come-to-this-conclusion/4184253/",
+        "image": "https://images.financialexpressdigital.com/2026/03/alex-younger-iran-us-israel-war-analysis.png",
+        "publishedAt": "2026-03-25T15:32:41Z",
+        "lang": "en",
+        "source": {
+          "id": "63361c66f51ee0c82a5325ba1c7b8d06",
+          "name": "The Financial Express",
+          "url": "https://www.financialexpress.com",
+          "country": "in"
+        }
+      }
+    },
+    {
+      "provider": "gnews",
+      "provider_article_id": "https://www.euronews.com/2026/03/25/iran-rejects-washingtons-15-point-plan-and-escalates-attacks-on-israel-and-gulf",
+      "title": "Iran rejects Washington's 15-point plan and escalates attacks on Israel and Gulf",
+      "url": "https://www.euronews.com/2026/03/25/iran-rejects-washingtons-15-point-plan-and-escalates-attacks-on-israel-and-gulf",
+      "source_name": "Euronews",
+      "published_at": "2026-03-25T15:27:54Z",
+      "authors": [],
+      "raw": {
+        "id": "ec27433b53a2e18f1dc71afc1ae9d535",
+        "title": "Iran rejects Washington's 15-point plan and escalates attacks on Israel and Gulf",
+        "description": "Tehran claimed on Wednesday it has rejected a US ceasefire plan, as it ramped up attacks on Israel and Gulf states and proposed its own terms, including reparations and control of Hormuz.",
+        "content": "Iran rejected on Wednesday a US plan to pause the war and launched more attacks on Israel and Gulf countries, including an assault that sparked a huge fire at Kuwait International Airport.\nIranian state-run television’s English-language broadcaster, ... [2368 chars]",
+        "url": "https://www.euronews.com/2026/03/25/iran-rejects-washingtons-15-point-plan-and-escalates-attacks-on-israel-and-gulf",
+        "image": "https://images.euronews.com/articles/stories/09/69/54/07/1200x675_cmsv2_1968322e-c9a8-5f7f-8835-bd2ca6c9a051-9695407.jpg",
+        "publishedAt": "2026-03-25T15:27:54Z",
+        "lang": "en",
+        "source": {
+          "id": "3d24c816061d69b2e23b8583aed9b447",
+          "name": "Euronews",
+          "url": "https://www.euronews.com",
+          "country": "fr"
+        }
+      }
+    }
+  ],
+  "analysis": {
+    "least_common_words_containing_l": [
+      {
+        "word": "alex",
+        "count": 1
+      },
+      {
+        "word": "applying",
+        "count": 1
+      },
+      {
+        "word": "april",
+        "count": 1
+      },
+      {
+        "word": "bill",
+        "count": 1
+      },
+      {
+        "word": "bills",
+        "count": 1
+      }
+    ],
+    "authors_appearing_more_than_once": []
+  }
+}

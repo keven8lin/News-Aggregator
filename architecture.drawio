@@ -1,6 +1,6 @@
 <mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36" version="29.6.6">
   <diagram name="News Pipeline Architecture" id="arch">
-    <mxGraphModel dx="3827" dy="817" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="1100" pageHeight="1900" math="0" shadow="0">
+    <mxGraphModel dx="1691" dy="1889" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="1100" pageHeight="1900" background="#ffffff" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -303,6 +303,80 @@
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="e_wr_osf" edge="1" parent="1" source="write_report" style="edgeStyle=orthogonalEdgeStyle;" target="output_sf" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="gh_-dQL9VyeC8ZN3tZoE-1" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=11;" value="&lt;b&gt;Configuration&lt;/b&gt;&lt;br&gt;API keys · rate limits · retry settings" vertex="1">
+          <mxGeometry height="55" width="300" x="290" y="-890" as="geometry" />
+        </mxCell>
+        <mxCell id="gh_-dQL9VyeC8ZN3tZoE-2" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d6b656;fontSize=11;" value="&lt;b&gt;GNews Provider&lt;/b&gt;&lt;br&gt;Fetches Iran political news&lt;br&gt;via GNews API" vertex="1">
+          <mxGeometry height="70" width="240" x="-60" y="-752.5" as="geometry" />
+        </mxCell>
+        <mxCell id="gh_-dQL9VyeC8ZN3tZoE-3" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d6b656;fontSize=11;" value="&lt;b&gt;Spaceflight News Provider&lt;/b&gt;&lt;br&gt;Fetches random space articles&lt;br&gt;via Spaceflight News API" vertex="1">
+          <mxGeometry height="70" width="240" x="680" y="-752.5" as="geometry" />
+        </mxCell>
+        <mxCell id="gh_-dQL9VyeC8ZN3tZoE-4" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=11;" value="&lt;b&gt;Transport Layer&lt;/b&gt;&lt;br&gt;Rate limiting + Exponential backoff retry" vertex="1">
+          <mxGeometry height="55" width="320" x="280" y="-745" as="geometry" />
+        </mxCell>
+        <mxCell id="gh_-dQL9VyeC8ZN3tZoE-5" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=11;" value="&lt;b&gt;Aggregator&lt;/b&gt;&lt;br&gt;Fan-out to providers · URL deduplication · fault isolation" vertex="1">
+          <mxGeometry height="55" width="440" x="220" y="-585" as="geometry" />
+        </mxCell>
+        <mxCell id="gh_-dQL9VyeC8ZN3tZoE-6" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=11;" value="&lt;b&gt;Text Analysis&lt;/b&gt;&lt;br&gt;Word frequency · Least-common words containing &#39;l&#39;&lt;br&gt;Author counts · Repeat authors" vertex="1">
+          <mxGeometry height="65" width="440" x="220" y="-455" as="geometry" />
+        </mxCell>
+        <mxCell id="gh_-dQL9VyeC8ZN3tZoE-7" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f0e6ff;strokeColor=#9673a6;fontSize=11;" value="&lt;b&gt;Report Generator&lt;/b&gt;&lt;br&gt;Builds JSON report per provider · writes to disk" vertex="1">
+          <mxGeometry height="55" width="440" x="220" y="-315" as="geometry" />
+        </mxCell>
+        <mxCell id="gh_-dQL9VyeC8ZN3tZoE-8" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;arcSize=50;fontSize=10;" value="gnews/&lt;br&gt;summary_results_quotes_*.json" vertex="1">
+          <mxGeometry height="55" width="230" x="90" y="-185" as="geometry" />
+        </mxCell>
+        <mxCell id="gh_-dQL9VyeC8ZN3tZoE-9" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;arcSize=50;fontSize=10;" value="spaceflight/&lt;br&gt;summary_results_quotes_*.json" vertex="1">
+          <mxGeometry height="55" width="230" x="560" y="-185" as="geometry" />
+        </mxCell>
+        <mxCell id="gh_-dQL9VyeC8ZN3tZoE-10" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=10;" value="&lt;b&gt;Error Handling&lt;/b&gt;&lt;br&gt;Provider errors → WARNING, pipeline continues&lt;br&gt;Disk write error → exit(2)" vertex="1">
+          <mxGeometry height="65" width="220" x="780" y="-585" as="geometry" />
+        </mxCell>
+        <mxCell id="gh_-dQL9VyeC8ZN3tZoE-11" edge="1" parent="1" source="gh_-dQL9VyeC8ZN3tZoE-1" style="edgeStyle=orthogonalEdgeStyle;strokeColor=#6c8ebf;fontSize=9;" target="gh_-dQL9VyeC8ZN3tZoE-2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="gh_-dQL9VyeC8ZN3tZoE-12" edge="1" parent="1" source="gh_-dQL9VyeC8ZN3tZoE-1" style="edgeStyle=orthogonalEdgeStyle;strokeColor=#6c8ebf;fontSize=9;" target="gh_-dQL9VyeC8ZN3tZoE-3">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="gh_-dQL9VyeC8ZN3tZoE-13" edge="1" parent="1" source="gh_-dQL9VyeC8ZN3tZoE-1" style="edgeStyle=orthogonalEdgeStyle;strokeColor=#6c8ebf;fontSize=9;" target="gh_-dQL9VyeC8ZN3tZoE-4">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="gh_-dQL9VyeC8ZN3tZoE-14" edge="1" parent="1" source="gh_-dQL9VyeC8ZN3tZoE-4" style="edgeStyle=orthogonalEdgeStyle;strokeColor=#9673a6;fontColor=#9673a6;fontSize=9;" target="gh_-dQL9VyeC8ZN3tZoE-2" value="rate limit + retry">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="gh_-dQL9VyeC8ZN3tZoE-15" edge="1" parent="1" source="gh_-dQL9VyeC8ZN3tZoE-4" style="edgeStyle=orthogonalEdgeStyle;strokeColor=#9673a6;fontColor=#9673a6;fontSize=9;" target="gh_-dQL9VyeC8ZN3tZoE-3" value="rate limit + retry">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="gh_-dQL9VyeC8ZN3tZoE-16" edge="1" parent="1" source="gh_-dQL9VyeC8ZN3tZoE-2" style="edgeStyle=orthogonalEdgeStyle;strokeColor=#d6b656;fontColor=#d6b656;fontSize=9;" target="gh_-dQL9VyeC8ZN3tZoE-5" value="articles[ ]">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="440" y="-695" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="gh_-dQL9VyeC8ZN3tZoE-17" edge="1" parent="1" source="gh_-dQL9VyeC8ZN3tZoE-3" style="edgeStyle=orthogonalEdgeStyle;strokeColor=#d6b656;fontColor=#d6b656;fontSize=9;" target="gh_-dQL9VyeC8ZN3tZoE-5" value="articles[ ]">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="440" y="-695" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="gh_-dQL9VyeC8ZN3tZoE-18" edge="1" parent="1" source="gh_-dQL9VyeC8ZN3tZoE-5" style="edgeStyle=orthogonalEdgeStyle;strokeColor=#82b366;fontColor=#82b366;fontSize=9;" target="gh_-dQL9VyeC8ZN3tZoE-6" value="per-provider article slice">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="gh_-dQL9VyeC8ZN3tZoE-19" edge="1" parent="1" source="gh_-dQL9VyeC8ZN3tZoE-5" style="edgeStyle=orthogonalEdgeStyle;strokeColor=#b85450;fontColor=#b85450;fontSize=9;dashed=1;" target="gh_-dQL9VyeC8ZN3tZoE-10" value="errors caught">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="gh_-dQL9VyeC8ZN3tZoE-20" edge="1" parent="1" source="gh_-dQL9VyeC8ZN3tZoE-6" style="edgeStyle=orthogonalEdgeStyle;strokeColor=#d6b656;fontColor=#d6b656;fontSize=9;" target="gh_-dQL9VyeC8ZN3tZoE-7" value="analysis results">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="gh_-dQL9VyeC8ZN3tZoE-21" edge="1" parent="1" source="gh_-dQL9VyeC8ZN3tZoE-7" style="edgeStyle=orthogonalEdgeStyle;strokeColor=#82b366;fontSize=9;" target="gh_-dQL9VyeC8ZN3tZoE-8">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="gh_-dQL9VyeC8ZN3tZoE-22" edge="1" parent="1" source="gh_-dQL9VyeC8ZN3tZoE-7" style="edgeStyle=orthogonalEdgeStyle;strokeColor=#82b366;fontSize=9;" target="gh_-dQL9VyeC8ZN3tZoE-9">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
       </root>
